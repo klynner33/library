@@ -4,6 +4,18 @@
     padding: 0;
 }
 
-p {
-    color: red;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+    color: #252422;
+}
+
+.sidebar {
+    background-color: #CCC5B9;
+    
+}
+
+.main {
+    background-color: #FFFCF2;
 }
