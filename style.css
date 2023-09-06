@@ -4,6 +4,15 @@
     padding: 0;
 }
 
+/* COLOR PALETTE */
+:root {
+    --cream: #FFFCF2;
+    --tan: #CCC5B9;
+    --brown: #403D39;
+    --dark-brown: #252422;
+    --red-orange: #EB5E28;
+  }
+
 .container {
     display: grid;
     grid-template-columns: 1fr 3fr;
