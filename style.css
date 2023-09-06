@@ -16,6 +16,43 @@
     
 }
 
+h1 {
+    padding: 20px;
+    text-align: center;
+}
+
+.add-book-form {
+    display: grid;
+    grid-template-rows: repeat(1fr, 4);
+    
+}
+
+.add-book-input {
+    padding: 15px 20px;
+}
+
+input[type="text"] {
+    padding: 5px 10px;
+}
+
+.book-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add-book-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #252422;
+    color: white;
+}
+
+
 .main {
     background-color: #FFFCF2;
+}
+
+h2 {
+    text-align: center;
 }
