@@ -24,21 +24,27 @@
 
                     <div class="add-book-input">
                         <label for="pages">Number of Pages</label>
-                        <input type="text" id="pages" name="book-info">
+                        <input type="number" id="pages" name="book-info" min="0">
                     </div>
 
                     <div class="add-book-input">
-                        <input type="checkbox" id="read-book" class="read-book">
+                        <input type="checkbox" id="read-book" class="read-book" value="yes">
                         <label for="read-book">I have already read this book!</label>
                     </div>
                 </form>
 
                 <div class="book-button-container">
-                    <button class="add-book-button" type="button">Add New Book</button>
+                    <button id="add-book-button" class="add-book-button" type="button">Add New Book</button>
                 </div>
             </section>
             <section class="main">
                 <h2>My Books</h2>
+                <div class="card">
+                    <div class="card-title">Title: <span id="card-title"></span></div>
+                    <div class="card-author">Author: <span id="card-author"></span></div>
+                    <div class="card-pages">Pages: <span id="card-pages"></span></div>
+                    <div class="card-read">Read <span id="card-read"></span></div>
+                </div>
             </section>
         </div>
 
