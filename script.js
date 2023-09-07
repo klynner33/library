@@ -1,24 +1,31 @@
-document.querySelector('#add-book-button').addEventListener('click', addBookToLibrary)
+let newBookBtn = document.querySelector('#add-book-button');
+    newBookBtn.addEventListener('click', function() {
+        let newBookForm = document.querySelector('#add-book-form');
+            newBookForm.style.display = 'block';
+    })
 
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 
-    
     myLibrary.push();
 };
 
 function addBookToLibrary() {
-    document.querySelector('#card-title').innerText = document.querySelector('#title').value 
-    document.querySelector('#card-author').innerText = document.querySelector('#author').value
-    document.querySelector('#card-pages').innerText = document.querySelector('#pages').value
-    document.querySelector('#card-read').innerText = document.querySelector('#read-book').checked
+    let title = document.querySelector('#title').value;
+    let author = document.querySelector('#author').value;
+    let pages = document.querySelector('#pages').value;
+    let read = document.querySelector('#read-book').checked;
+    let newBook = new Book(title, author, pages, read);
+    console.log(newBook);
 };
 
-// const myBook1 = {
-//     title: 'book title',
-//     author: 'b',
-//     pages: 2
-// }
+document.querySelector('#submit-book').addEventListener('click', function() {
+    event.preventDefault();
 
-// document.querySelector('#card-title').innerText = myBook1.title;
+    console.log(addBookToLibrary());
+})

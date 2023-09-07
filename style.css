@@ -13,29 +13,36 @@
     --red-orange: #EB5E28;
   }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    height: 100vh;
-    color: #252422;
-}
-
-/* SIDEBAR */
-
-.sidebar {
+header {
+    display: flex;
+    flex-direction: column;
     background-color: #CCC5B9;
-    
+    padding: 20px;
+    align-items: center;
 }
 
 h1 {
-    padding: 20px;
-    text-align: center;
+    padding-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #252422;
+    color: white;
+    width: 50%;
 }
 
 .add-book-form {
     display: grid;
     grid-template-rows: repeat(1fr, 4);
     
+}
+
+.input-label {
+    display: flex;
+    flex-direction: column;
 }
 
 .add-book-input {
@@ -46,31 +53,5 @@ input[type="text"], input[type="number"] {
     padding: 5px 10px;
 }
 
-.book-button-container {
-    display: flex;
-    justify-content: center;
-}
 
-.add-book-button {
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    background-color: #252422;
-    color: white;
-}
 
-/* MAIN */
-
-.main {
-    background-color: #FFFCF2;
-}
-
-h2 {
-    text-align: center;
-}
-
-.card {
-    border: 1px solid black;
-    width: 200px;
-    height: 200px;
-}

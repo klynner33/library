@@ -8,45 +8,37 @@
     </head>
     
     <body>
-        <div class="container">
-            <section class="sidebar">
-                <h1>Library</h1>
-                <form class="add-book-form  ">
-                    <div class="add-book-input">
-                        <label for="title">Title</label>
-                        <input type="text" id="title" name="book-info">
-                    </div>
+        <header>
+            <h1>My Library</h1>
+                
+            <button id="add-book-button" class="add-book-button" type="button">Add New Book</button>
+        </header>
 
-                    <div class="add-book-input">
-                        <label for="author">Author</label>
-                        <input type="text" id="author" name="book-info">
-                    </div>
+        <form class="add-book-form " id="add-book-form" style="display: none;">
+            <div class="add-book-input input-label">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="book-info">
+            </div>
+            <div class="add-book-input input-label">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="book-info">
+            </div>
+            <div class="add-book-input input-label">
+                <label for="pages">Pages</label>
+                <input type="number" id="pages" name="book-info" min="0">
+            </div>
+            <div class="add-book-input">
+                <input type="checkbox" id="read-book" class="read-book" value="yes">
+                <label for="read-book">I have already read this book!</label>
+            </div>
+            <!-- <div class="book-submit-button"> -->
+                <button id="submit-book" type="submit">Add Book</button>
+            <!-- </div> -->
+        </form>
 
-                    <div class="add-book-input">
-                        <label for="pages">Number of Pages</label>
-                        <input type="number" id="pages" name="book-info" min="0">
-                    </div>
+                
+            
 
-                    <div class="add-book-input">
-                        <input type="checkbox" id="read-book" class="read-book" value="yes">
-                        <label for="read-book">I have already read this book!</label>
-                    </div>
-                </form>
-
-                <div class="book-button-container">
-                    <button id="add-book-button" class="add-book-button" type="button">Add New Book</button>
-                </div>
-            </section>
-            <section class="main">
-                <h2>My Books</h2>
-                <div class="card">
-                    <div class="card-title">Title: <span id="card-title"></span></div>
-                    <div class="card-author">Author: <span id="card-author"></span></div>
-                    <div class="card-pages">Pages: <span id="card-pages"></span></div>
-                    <div class="card-read">Read <span id="card-read"></span></div>
-                </div>
-            </section>
-        </div>
 
         <script src="script.js"></script>
     </body>
