@@ -1,31 +1,133 @@
-let newBookBtn = document.querySelector('#add-book-button');
-    newBookBtn.addEventListener('click', function() {
-        let newBookForm = document.querySelector('#add-book-form');
-            newBookForm.style.display = 'block';
+const books = document.querySelector('.books');
+
+const myLibrary = [{
+    title: 'book1',
+    author: 'me',
+    pages: 500,
+    read: true
+}, {
+    title: 'book2',
+    author: 'you',
+    pages: 5000,
+    read: false
+}];
+
+function createBookElement(el, content, className) {
+    const element = document.createElement(el);
+    element.textContent = content
+    element.setAttribute('class', className);
+    return element;
+}
+
+function createReadElement(bookItem, book) {
+    const read = document.createElement('div');
+    read.setAttribute('class', 'book-read');
+    read.appendChild(createBookElement('h1', "Read?", "book-read-title"));
+    const checkbox = document.createElement('input')
+    checkbox.type = "checkbox";
+    checkbox.addEventListener('click', (e) => {
+        if(e.target.checked) {
+            bookItem.setAttribute('class', 'card book read-checked');
+            book.read = "true";
+            renderBooks();
+        } else {
+            bookItem.setAttribute('class', 'card book read-unchecked');
+            book.read = false;
+            renderBooks();
+        }
+        if(book.read) {
+            checkbox.check = true;
+            bookItem.setAttribute('class', 'card book read-checked');
+        } 
+        read.appendChild(checkbox);
+        return read;
     })
+}
 
-const myLibrary = [];
+function createBookItem(book, index) {
+    const bookItem = document.createElement('div');
+    bookItem.setAttribute('id', index)
+    bookItem.setAttribute('key', index)
+    bookItem.setAttribute('class', 'card book')
+    bookItem.appendChild(createBookElement('h1', `Title: ${book.title}`, "book-title"));
+    bookItem.appendChild(createBookElement('h1', `Author: ${book.author}`, "book-author"));
+    bookItem.appendChild(createBookElement('h1', `Pages: ${book.pages}`, "book-pages"));
+    bookItem.append(createReadElement(bookItem, book));
+    books.insertAdjacentElement("afterbegin", bookItem);
+}
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+function renderBooks() {
+    myLibrary.map((book, index) => {
+        createBookItem(book, index) 
+    })
+}
 
-    myLibrary.push();
-};
+renderBooks();
 
-function addBookToLibrary() {
-    let title = document.querySelector('#title').value;
-    let author = document.querySelector('#author').value;
-    let pages = document.querySelector('#pages').value;
-    let read = document.querySelector('#read-book').checked;
-    let newBook = new Book(title, author, pages, read);
-    console.log(newBook);
-};
 
-document.querySelector('#submit-book').addEventListener('click', function() {
-    event.preventDefault();
 
-    console.log(addBookToLibrary());
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function Book(title, author, pages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+// };
+
+
+// // function renderBook() {
+// //     let libraryElement = document.querySelector("#library");
+// //     libraryElement.innerHTML = '';
+// //     for (let i = 0; i <= myLibrary.length; i++) {
+// //         let book = myLibrary[i];
+// //         let bookElement = document.createElement('div');
+// //         bookElement.innerHTML = `
+// //             <div class="card-header">
+// //                 <h3 class="title">${book.title}</h3>
+// //                 <h5 class="author">by ${book.author}</h5>
+// //             </div>
+// //             <div class="card-body">
+// //                 <p>${book.pages} pages</p>
+// //                 <p class="read-status">${book.read ? "Read" : "Not Read Yet"}</p>
+// //                 <button class="remove-btn" onclick="removeBook(${i})">Remove</button>
+// //                 <button class="toggle-read-btn" onclick="toggleRead(${i})">Toggle</button> `
+// //         libraryElement.appendChild(bookElement);
+// //     }
+// // }
+
+// // function removeBook(index) {
+// //     myLibrary.splice(index, 1)
+// // }
+
+// function addBookToLibrary() {
+//     let title = document.querySelector('#title').value;
+//     let author = document.querySelector('#author').value;
+//     let pages = document.querySelector('#pages').value;
+//     let read = document.querySelector('#read-book').checked;
+//     let newBook = new Book(title, author, pages, read);
+//     myLibrary.push(newBook);
+//     // renderBook();
+// };
+
+// let newBookBtn = document.querySelector('#add-book-button');
+//     newBookBtn.addEventListener('click', function() {
+//         let newBookForm = document.querySelector('#add-book-form');
+//             newBookForm.style.display = 'block';
+//     })
+
+// document.querySelector('#submit-book').addEventListener('click', function(event) {
+//     event.preventDefault();
+//     addBookToLibrary();
+// })
