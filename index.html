@@ -20,27 +20,32 @@
             </div>
         </header>
 
-        <form class="add-book-form " id="add-book-form" style="display: none;">
-            <div class="add-book-input input-label">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="book-info">
-            </div>
-            <div class="add-book-input input-label">
-                <label for="author">Author</label>
-                <input type="text" id="author" name="book-info">
-            </div>
-            <div class="add-book-input input-label">
-                <label for="pages">Pages</label>
-                <input type="number" id="pages" name="book-info" min="0">
-            </div>
-            <div class="add-book-input">
-                <input type="checkbox" id="read-book" class="read-book" value="yes">
-                <label for="read-book">I have already read this book!</label>
-            </div>
-            <!-- <div class="book-submit-button"> -->
-                <button id="submit-book" type="submit">Add Book</button>
-            <!-- </div> -->
-        </form>
+        <dialog id="modal" class="modal">
+            <form class="add-book-form " id="add-book-form" method="dialog">
+                <div class="close-modal-container">
+                    <button id="close-modal-button" class="close-modal-button">X</button>
+                </div>
+                <div class="add-book-input input-label">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="book-info">
+                </div>
+                <div class="add-book-input input-label">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="book-info">
+                </div>
+                <div class="add-book-input input-label">
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" name="book-info" min="0">
+                </div>
+                <div class="add-book-input">
+                    <input type="checkbox" id="read-book" class="read-book" value="yes">
+                    <label for="read-book">I have already read this book!</label>
+                </div>
+                <div class="book-submit-container">
+                    <button id="submit-book-button" class="submit-book-button" type="submit">Add Book</button>
+                </div>
+            </form>
+        </dialog>
         <div id="library" class="books">
 
         </div>

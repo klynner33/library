@@ -1,9 +1,18 @@
+const modal = document.querySelector("#modal");
 const addBookButton = document.querySelector("#add-book-button");
-    addBookButton.addEventListener('click', function() {
-       const addBookForm = document.querySelector('#add-book-form');
-            addBookForm.style.display = "block";
-       console.log()
+const closeModalButton = document.querySelector("#close-modal-button");
+    
+
+addBookButton.addEventListener('click', () => {
+    modal.showModal();
     })
+
+closeModalButton.addEventListener('click', () => {
+    modal.closest();
+})
+
+
+
 
 
 

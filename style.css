@@ -45,10 +45,36 @@ nav > button {
     cursor: pointer;
 }
 
+.modal {
+    padding: 10px;
+    max-width: 50ch;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    margin: auto;
+}
+
+.modal::backdrop {
+    background-color: #CCC5B9;
+    opacity: .7;
+}
+
 .add-book-form {
     display: grid;
     grid-template-rows: repeat(1fr, 4);
     
+}
+
+.close-modal-container {
+    display: flex;
+    justify-content: end;
+}
+
+.close-modal-button {
+    background-color: #EB5E28;
+    border: none;
+    padding: 2px 5px;
+    border-radius: 5px;
 }
 
 .input-label {
@@ -64,5 +90,8 @@ input[type="text"], input[type="number"] {
     padding: 5px 10px;
 }
 
-
+.submit-book-container {
+    display: flex;
+    justify-content: center;
+}
 
