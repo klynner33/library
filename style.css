@@ -13,25 +13,36 @@
     --red-orange: #EB5E28;
   }
 
-header {
+nav {
     display: flex;
-    flex-direction: column;
     background-color: #CCC5B9;
     padding: 20px;
+    justify-content: space-between;
     align-items: center;
 }
 
-h1 {
-    padding-bottom: 20px;
-}
 
-button {
+nav > button {
     padding: 10px 20px;
     border-radius: 8px;
     border: none;
     background-color: #252422;
     color: white;
-    width: 50%;
+}
+
+.add-book-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add-book-button {
+    border: none;
+    background-color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 20px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .add-book-form {

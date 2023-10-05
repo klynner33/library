@@ -1,68 +1,86 @@
-const books = document.querySelector('.books');
-
-const myLibrary = [{
-    title: 'book1',
-    author: 'me',
-    pages: 500,
-    read: true
-}, {
-    title: 'book2',
-    author: 'you',
-    pages: 5000,
-    read: false
-}];
-
-function createBookElement(el, content, className) {
-    const element = document.createElement(el);
-    element.textContent = content
-    element.setAttribute('class', className);
-    return element;
-}
-
-function createReadElement(bookItem, book) {
-    const read = document.createElement('div');
-    read.setAttribute('class', 'book-read');
-    read.appendChild(createBookElement('h1', "Read?", "book-read-title"));
-    const checkbox = document.createElement('input')
-    checkbox.type = "checkbox";
-    checkbox.addEventListener('click', (e) => {
-        if(e.target.checked) {
-            bookItem.setAttribute('class', 'card book read-checked');
-            book.read = "true";
-            renderBooks();
-        } else {
-            bookItem.setAttribute('class', 'card book read-unchecked');
-            book.read = false;
-            renderBooks();
-        }
-        if(book.read) {
-            checkbox.check = true;
-            bookItem.setAttribute('class', 'card book read-checked');
-        } 
-        read.appendChild(checkbox);
-        return read;
+const addBookButton = document.querySelector("#add-book-button");
+    addBookButton.addEventListener('click', function() {
+       const addBookForm = document.querySelector('#add-book-form');
+            addBookForm.style.display = "block";
+       console.log()
     })
-}
 
-function createBookItem(book, index) {
-    const bookItem = document.createElement('div');
-    bookItem.setAttribute('id', index)
-    bookItem.setAttribute('key', index)
-    bookItem.setAttribute('class', 'card book')
-    bookItem.appendChild(createBookElement('h1', `Title: ${book.title}`, "book-title"));
-    bookItem.appendChild(createBookElement('h1', `Author: ${book.author}`, "book-author"));
-    bookItem.appendChild(createBookElement('h1', `Pages: ${book.pages}`, "book-pages"));
-    bookItem.append(createReadElement(bookItem, book));
-    books.insertAdjacentElement("afterbegin", bookItem);
-}
 
-function renderBooks() {
-    myLibrary.map((book, index) => {
-        createBookItem(book, index) 
-    })
-}
 
-renderBooks();
+
+
+
+
+
+
+
+
+
+// const books = document.querySelector('.books');
+
+// const myLibrary = [{
+//     title: 'book1',
+//     author: 'me',
+//     pages: 500,
+//     read: true
+// }, {
+//     title: 'book2',
+//     author: 'you',
+//     pages: 5000,
+//     read: false
+// }];
+
+// function createBookElement(el, content, className) {
+//     const element = document.createElement(el);
+//     element.textContent = content
+//     element.setAttribute('class', className);
+//     return element;
+// }
+
+// function createReadElement(bookItem, book) {
+//     const read = document.createElement('div');
+//     read.setAttribute('class', 'book-read');
+//     read.appendChild(createBookElement('h1', "Read?", "book-read-title"));
+//     const checkbox = document.createElement('input')
+//     checkbox.type = "checkbox";
+//     checkbox.addEventListener('click', (e) => {
+//         if(e.target.checked) {
+//             bookItem.setAttribute('class', 'card book read-checked');
+//             book.read = "true";
+//             renderBooks();
+//         } else {
+//             bookItem.setAttribute('class', 'card book read-unchecked');
+//             book.read = false;
+//             renderBooks();
+//         }
+//         if(book.read) {
+//             checkbox.check = true;
+//             bookItem.setAttribute('class', 'card book read-checked');
+//         } 
+//         read.appendChild(checkbox);
+//         return read;
+//     })
+// }
+
+// function createBookItem(book, index) {
+//     const bookItem = document.createElement('div');
+//     bookItem.setAttribute('id', index)
+//     bookItem.setAttribute('key', index)
+//     bookItem.setAttribute('class', 'card book')
+//     bookItem.appendChild(createBookElement('h1', `Title: ${book.title}`, "book-title"));
+//     bookItem.appendChild(createBookElement('h1', `Author: ${book.author}`, "book-author"));
+//     bookItem.appendChild(createBookElement('h1', `Pages: ${book.pages}`, "book-pages"));
+//     bookItem.append(createReadElement(bookItem, book));
+//     books.insertAdjacentElement("afterbegin", bookItem);
+// }
+
+// function renderBooks() {
+//     myLibrary.map((book, index) => {
+//         createBookItem(book, index) 
+//     })
+// }
+
+// renderBooks();
 
 
 
