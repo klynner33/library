@@ -48,21 +48,18 @@ nav > button {
 .modal {
     padding: 10px;
     max-width: 50ch;
+    min-width: 35ch;
     border: 0;
     border-radius: 8px;
     box-shadow: 0 0 1em rgb(0 0 0 / .3);
     margin: auto;
+    background-color: #CCC5B9;
+    
 }
 
 .modal::backdrop {
     background-color: #CCC5B9;
     opacity: .7;
-}
-
-.add-book-form {
-    display: grid;
-    grid-template-rows: repeat(1fr, 4);
-    
 }
 
 .close-modal-container {
@@ -73,25 +70,56 @@ nav > button {
 .close-modal-button {
     background-color: #EB5E28;
     border: none;
-    padding: 2px 5px;
     border-radius: 5px;
+    height: 20px;
+    width: 20px;
 }
 
-.input-label {
+.modal-heading-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-heading-container > p {
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .add-book-input {
-    padding: 15px 20px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 input[type="text"], input[type="number"] {
     padding: 5px 10px;
+    border-radius: 8px;
+    width: 90%;
+    height: 40px;
+    border: none;
+}
+
+input[type="text"]::placeholder, input[type="number"]::placeholder {
+    color: #403D39;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
 }
 
 .submit-book-container {
     display: flex;
     justify-content: center;
+    margin: 15px 0 10px 0;
+}
+
+.submit-book-button {
+    background-color: #EB5E28;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 90%;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
