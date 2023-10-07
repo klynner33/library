@@ -1,16 +1,60 @@
+
 const modal = document.querySelector("#modal");
 const addBookButton = document.querySelector("#add-book-button");
 const closeModalButton = document.querySelector("#close-modal-button");
-    
+const bookCardContainer = document.querySelector('.book-card-container');    
+const submitBookButton = document.querySelector('.submit-book-button');
+const cardTitle = document.querySelector('.title');
+const cardAuthor = document.querySelector('.author');
+const cardPages = document.querySelector('.pages');
 
+/* MODAL */
 addBookButton.addEventListener('click', () => {
     modal.showModal();
     })
 
 closeModalButton.addEventListener('click', () => {
-    modal.closest();
+    modal.close();
 })
 
+submitBookButton.addEventListener('click', () => {
+    cardTitle.innerHTML = myLibrary[0].title;
+    cardAuthor.innerHTML += myLibrary[0].author;
+    cardPages.innerHTML += myLibrary[0].pages;
+    
+
+})
+
+/* ARRAY TO DISPLAY IN CARD */
+const myLibrary = [
+    {
+        'title': "Harry Potter",
+        'author': "JK Rowling",
+        'pages': 100,
+        'read': true
+    },
+    {
+        'title': 'Diary of a Wimpy Kid',
+        'author': 'unknown',
+        'pages': 90,
+        'read': false
+    }
+];
+
+
+
+
+    
+
+console.log(myLibrary[0]);
+
+function Book() {
+
+}
+
+function addBookToLibrary() {
+
+}
 
 
 
