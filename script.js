@@ -2,6 +2,9 @@
 const modal = document.querySelector("#modal");
 const addBookButton = document.querySelector("#add-book-button");
 const closeModalButton = document.querySelector("#close-modal-button");
+const inputTitle = document.querySelector("#input-title");
+const inputAuthor = document.querySelector("#input-author");
+const inputPages = document.querySelector("#input-pages");
 const bookCardContainer = document.querySelector('.book-card-container');    
 const submitBookButton = document.querySelector('.submit-book-button');
 const cardTitle = document.querySelector('.title');
@@ -18,10 +21,10 @@ closeModalButton.addEventListener('click', () => {
 })
 
 submitBookButton.addEventListener('click', () => {
-    cardTitle.innerHTML = myLibrary[0].title;
-    cardAuthor.innerHTML += myLibrary[0].author;
-    cardPages.innerHTML += myLibrary[0].pages;
-    
+    cardTitle.innerHTML = inputTitle.value;
+    cardAuthor.innerHTML += inputAuthor.value;
+    cardPages.innerHTML += inputPages.value;
+    bookCardContainer.style.display = 'flex';
 
 })
 

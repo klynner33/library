@@ -24,8 +24,8 @@
             <p class="card title"></p>
             <p class="card author"></p>
             <p class="card pages"></p>
-            <!-- <button>Read</button>
-            <button>Remove</button> -->
+            <button id="read-button" class="read-button">Read</button>
+            <button id="remove-button" class="remove-button">Remove</button>
         </div>
 
         <dialog id="modal" class="modal">
@@ -37,16 +37,16 @@
                     <p>Add new book</p>
                 </div>
                 <div class="add-book-input input-label">
-                    <input type="text" id="title" name="book-info" placeholder="Title">
+                    <input type="text" id="input-title" name="book-info" placeholder="Title">
                 </div>
                 <div class="add-book-input input-label">
-                    <input type="text" id="author" name="book-info" placeholder="Author">
+                    <input type="text" id="input-author" name="book-info" placeholder="Author">
                 </div>
                 <div class="add-book-input input-label">
-                    <input type="number" id="pages" name="book-info" min="0" placeholder="Pages">
+                    <input type="number" id="input-pages" name="book-info" min="0" placeholder="Pages">
                 </div>
                 <div class="add-book-input">
-                    <input type="checkbox" id="read-book" class="read-book" value="yes">
+                    <input type="checkbox" id="input-read-book" class="read-book" value="yes">
                     <label for="read-book">I have already read this book!</label>
                 </div>
                 <div class="submit-book-container">

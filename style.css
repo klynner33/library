@@ -125,3 +125,29 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+.book-card-container {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+    height: 275px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    border-radius: 8px;
+    padding: 15px 0;
+    margin: 10px;
+}
+
+.book-card-container > p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.book-card-container > button {
+    width: 70%;
+    height: 17%;
+    border: none;
+    border-radius: 8px;
+}
+
