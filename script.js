@@ -5,11 +5,14 @@ const closeModalButton = document.querySelector("#close-modal-button");
 const inputTitle = document.querySelector("#input-title");
 const inputAuthor = document.querySelector("#input-author");
 const inputPages = document.querySelector("#input-pages");
-const bookCardContainer = document.querySelector('.book-card-container');    
+const inputReadBook = document.querySelector('#input-read-book');
+const bookCardContainer = document.querySelector('#book-card-container');    
 const submitBookButton = document.querySelector('.submit-book-button');
 const cardTitle = document.querySelector('.title');
 const cardAuthor = document.querySelector('.author');
 const cardPages = document.querySelector('.pages');
+const readButton = document.querySelector('#read-button');
+const tester = document.querySelector('#tester');
 
 /* MODAL */
 addBookButton.addEventListener('click', () => {
@@ -20,44 +23,65 @@ closeModalButton.addEventListener('click', () => {
     modal.close();
 })
 
-submitBookButton.addEventListener('click', () => {
-    cardTitle.innerHTML = inputTitle.value;
-    cardAuthor.innerHTML += inputAuthor.value;
-    cardPages.innerHTML += inputPages.value;
-    bookCardContainer.style.display = 'flex';
+const addBookToLibrary = e => {
+    e.preventDefault();
+    bookCardContainer.innerHTML = Object.values(myLibrary[0]);
+    // cardTitle.innerHTML = inputTitle.value;
+    // cardAuthor.innerHTML += inputAuthor.value;
+    // cardPages.innerHTML += inputPages.value;
+    // bookCardContainer.style.display = 'flex';
+    // let book = {
+    //     title: inputTitle.value,
+    //     author: inputAuthor.value,
+    //     pages: inputPages.value
+    // }
+    // myLibrary.push(book); 
+    bookRead();
+    console.log(myLibrary);
+}
 
-})
+
+submitBookButton.addEventListener('click', addBookToLibrary);
+// {
+    // cardTitle.innerHTML = inputTitle.value;
+    // cardAuthor.innerHTML += inputAuthor.value;
+    // cardPages.innerHTML += inputPages.value;
+    // bookCardContainer.style.display = 'flex';
+    // bookRead();
+// })
+
+function bookRead() {
+    if (inputReadBook.checked) {
+        readButton.style.backgroundColor = '#EB5E28';
+        readButton.style.color = 'white';
+    } else {
+        readButton.style.backgroundColor = '#403D39';
+        readButton.style.color = 'white';
+        readButton.innerHTML = 'Not Read';
+    }
+}
 
 /* ARRAY TO DISPLAY IN CARD */
-const myLibrary = [
-    {
-        'title': "Harry Potter",
-        'author': "JK Rowling",
-        'pages': 100,
-        'read': true
-    },
-    {
-        'title': 'Diary of a Wimpy Kid',
-        'author': 'unknown',
-        'pages': 90,
-        'read': false
+// const myLibrary = [];
+
+function Book(bookTitle, bookAuthor, numOfPages) {
+    this.title = bookTitle
+    this.author = bookAuthor
+    this.pages = numOfPages
+    this.read = function() {
+        if (inputReadBook.checked) {
+            readButton.style.backgroundColor = '#EB5E28';
+            readButton.style.color = 'white';
+        } else {
+            readButton.style.backgroundColor = '#403D39';
+            readButton.style.color = 'white';
+            readButton.innerHTML = 'Not Read';
+        }
     }
-];
-
-
-
-
-    
-
-console.log(myLibrary[0]);
-
-function Book() {
-
 }
 
-function addBookToLibrary() {
-
-}
+let arr = ['title: HP', 'author: JK', 'pages: 250']
+arr.forEach(el => tester.innerHTML += `${el} `)
 
 
 
@@ -74,17 +98,17 @@ function addBookToLibrary() {
 
 // const books = document.querySelector('.books');
 
-// const myLibrary = [{
-//     title: 'book1',
-//     author: 'me',
-//     pages: 500,
-//     read: true
-// }, {
-//     title: 'book2',
-//     author: 'you',
-//     pages: 5000,
-//     read: false
-// }];
+const myLibrary = [{
+    title: 'book1',
+    author: 'me',
+    pages: 500,
+    read: true
+}, {
+    title: 'book2',
+    author: 'you',
+    pages: 5000,
+    read: false
+}];
 
 // function createBookElement(el, content, className) {
 //     const element = document.createElement(el);
