@@ -125,6 +125,11 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+.library {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .card-container {
     display: flex;
     flex-direction: column;
@@ -155,5 +160,16 @@ input[type="checkbox"] {
 
 .remove-button:hover {
     background-color: #d4d4d4;
+    cursor: pointer;
+}
+
+.toggle-read-button {
+    background-color: #EB5E28;
+    color: white;
+}
+
+.toggle-read-button:hover {
+    background-color: #ed794b;
+    cursor: pointer;
 }
 

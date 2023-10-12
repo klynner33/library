@@ -4,11 +4,11 @@ const addBookButton = document.querySelector("#add-book-button");
 const closeModalButton = document.querySelector("#close-modal-button");
 const bookCardContainer = document.querySelector('#book-card-container');    
 const submitBookButton = document.querySelector('#submit-book-button');
-const cardTitle = document.querySelector('.title');
-const cardAuthor = document.querySelector('.author');
-const cardPages = document.querySelector('.pages');
-const readButton = document.querySelector('#read-button');
-const tester = document.querySelector('#tester');
+// const cardTitle = document.querySelector('.title');
+// const cardAuthor = document.querySelector('.author');
+// const cardPages = document.querySelector('.pages');
+// const readButton = document.querySelector('#read-button');
+// const tester = document.querySelector('#tester');
 let inputReadBook = document.querySelector('#input-read-book');
 
 /* MODAL */
@@ -24,6 +24,7 @@ closeModalButton.addEventListener('click', () => {
 submitBookButton.addEventListener('click', function(event) {
     event.preventDefault();
     addBookToLibrary();
+    modal.close();
 });
 
 const myLibrary = [];
@@ -35,18 +36,27 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
+Book.prototype.toggleRead = function() {
+    this.read = !this.read;
+}
+
+function toggleRead(index) {
+    myLibrary[index].toggleRead();
+    render();
+}
+
     function render() {
         let libraryEl = document.querySelector('#library');
         libraryEl.innerHTML = '';
         for (let i = 0; i < myLibrary.length; i++) {
             let book = myLibrary[i];
-            let bookEl = document.createElement('div.book-cards');
+            let bookEl = document.createElement('div');
             bookEl.innerHTML = `
                 <div class="card-container">
                     <p class="title">${book.title}</p>
                     <p class="author">By ${book.author}</p>
                     <p class="pages">${book.pages} pages</p>
-                    <p class="read-status">${book.read ? "Read" : "Not Read Yet"}</p>
+                    <button class="toggle-read-button" onclick="toggleRead(${i})">${book.read ? "Read" : "Not Read Yet"}</button>
                     <button class="remove-button" onclick="removeBook(${i})">Remove</button>
                 </div>
             `
