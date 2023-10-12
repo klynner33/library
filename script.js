@@ -33,26 +33,30 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    // this.read = function() {
-    //     if (inputReadBook.checked) {
-    //         readButton.style.backgroundColor = '#EB5E28';
-    //         readButton.style.color = 'white';
-    //     } else {
-    //         readButton.style.backgroundColor = '#403D39';
-    //         readButton.style.color = 'white';
-    //         readButton.innerHTML = 'Not Read';
-    //     }
-    }
+}
 
     function render() {
         let libraryEl = document.querySelector('#library');
         libraryEl.innerHTML = '';
         for (let i = 0; i < myLibrary.length; i++) {
             let book = myLibrary[i];
-            let bookEl = document.createElement('div');
-            bookEl.innerHTML = `<p>${book.title}</p>`
+            let bookEl = document.createElement('div.book-cards');
+            bookEl.innerHTML = `
+                <div class="card-container">
+                    <p class="title">${book.title}</p>
+                    <p class="author">By ${book.author}</p>
+                    <p class="pages">${book.pages} pages</p>
+                    <p class="read-status">${book.read ? "Read" : "Not Read Yet"}</p>
+                    <button class="remove-button" onclick="removeBook(${i})">Remove</button>
+                </div>
+            `
             libraryEl.appendChild(bookEl);
         }
+    }
+
+    function removeBook(index) {
+        myLibrary.splice(index, 1);
+        render();
     }
 
 function addBookToLibrary() {
@@ -62,18 +66,5 @@ function addBookToLibrary() {
     let inputReadBook = document.querySelector('#input-read-book').checked;
     let newBook = new Book(inputTitle, inputAuthor, inputPages, inputReadBook);
     myLibrary.push(newBook);
-//     bookCardContainer.style.display = 'flex';
-//     bookRead();
     render();
 }
-
-// function bookRead() {
-//     if (inputReadBook.checked) {
-//         readButton.style.backgroundColor = '#EB5E28';
-//         readButton.style.color = 'white';
-//     } else {
-//         readButton.style.backgroundColor = '#403D39';
-//         readButton.style.color = 'white';
-//         readButton.innerHTML = 'Not Read';
-//     }
-// }
