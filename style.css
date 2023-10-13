@@ -28,6 +28,7 @@ nav > button {
     border: none;
     background-color: #252422;
     color: white;
+    cursor: pointer;
 }
 
 .add-book-container {
@@ -44,6 +45,12 @@ nav > button {
     padding: 5px;
     cursor: pointer;
 }
+
+.add-book-button:hover {
+    cursor: pointer;
+}
+
+
 
 .modal {
     padding: 10px;
@@ -172,4 +179,5 @@ input[type="checkbox"] {
     background-color: #ed794b;
     cursor: pointer;
 }
+
 

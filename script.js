@@ -4,15 +4,11 @@ const addBookButton = document.querySelector("#add-book-button");
 const closeModalButton = document.querySelector("#close-modal-button");
 const bookCardContainer = document.querySelector('#book-card-container');    
 const submitBookButton = document.querySelector('#submit-book-button');
-// const cardTitle = document.querySelector('.title');
-// const cardAuthor = document.querySelector('.author');
-// const cardPages = document.querySelector('.pages');
-// const readButton = document.querySelector('#read-button');
-// const tester = document.querySelector('#tester');
-let inputReadBook = document.querySelector('#input-read-book');
+// let inputReadBook = document.querySelector('#input-read-book');
 
 /* MODAL */
 addBookButton.addEventListener('click', () => {
+    
     modal.showModal();
     })
 
@@ -29,11 +25,13 @@ submitBookButton.addEventListener('click', function(event) {
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 Book.prototype.toggleRead = function() {
